@@ -1,0 +1,8 @@
+.player-image{
+    width: 120px;
+    height: 100px;
+    box-sizing: border-box;
+}
+.rider-link{
+    text-decoration: none;
+}

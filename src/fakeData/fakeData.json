@@ -1,0 +1,26 @@
+[
+    {
+        "id" : "r-1",
+        "name" : "Bike",
+        "rate" : 100,
+        "imageURL" : "https://i.ibb.co/xMvwfJp/bike.png"
+    },
+    {
+        "id" : "r-2",
+        "name" : "Rickshaw",
+        "rate" : 50,
+        "imageURL" : "https://i.ibb.co/nmNzncG/rickshaw.jpg"
+    },
+    {
+        "id" : "r-3",
+        "name" : "CNG",
+        "rate" : 70,
+        "imageURL" : "https://i.ibb.co/kKs44v5/cng.jpg"
+    },
+    {
+        "id" : "r-4",
+        "name" : "Bus",
+        "rate" : 30,
+        "imageURL" : "https://i.ibb.co/RSJXHwk/bus.png"
+    }
+]
