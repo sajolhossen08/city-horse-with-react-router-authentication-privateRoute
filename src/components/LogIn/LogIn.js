@@ -4,6 +4,8 @@ import './LogIn.css'
 const LogIn = (props) => {
 
     const {
+        name,
+        setName,
         email,
         setEmail,
         password,
@@ -27,12 +29,17 @@ const LogIn = (props) => {
             <p className="text-center">or</p>
             <section className="login">
                 <div className="loginContainer">
+                    {!haveAccount && <div>
+                    <label>Name</label>
+                    <input type="text" placeholder = "Enter your name"  required value = {name} onChange= {(e) => setName(e.target.value)}
+                    />
+                    </div>}
                     <label>Email</label>
-                    <input type="text" required value = {email} onChange= {(e) => setEmail(e.target.value)}
+                    <input type="text" placeholder = "Enter your email"  required value = {email} onChange= {(e) => setEmail(e.target.value)}
                     />
                     <p className="errorMsg">{emailError}</p>
                     <label>Password</label>
-                    <input type="password" required value = {password} onChange= {(e) => setPassword(e.target.value)}
+                    <input type="password" placeholder = "Enter your password"  required value = {password} onChange= {(e) => setPassword(e.target.value)}
                     />
                     <p className="errorMsg">{passwordError}</p>
                     <div className="btnContainer">

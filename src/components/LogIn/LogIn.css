@@ -43,7 +43,7 @@
     background: radial-gradient(
       ellipse at left bottom,
       rgb(25, 77, 97) 0%,
-      rgba(5, 140, 158, 0.9) 59%,
+      #54bbc9e6 59%,
       rgba(28, 75, 97, 0.9) 100%
     );
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);

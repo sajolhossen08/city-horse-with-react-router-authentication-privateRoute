@@ -15,9 +15,9 @@ import Destination from './components/Destination/Destination';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 
-
 function App() {
   const [user, setUser] = useState('');
+  const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -35,6 +35,7 @@ function App() {
       console.log(error);
     });
     }
+
 
     const clearInputs =() =>{
         setEmail('');
@@ -64,7 +65,7 @@ function App() {
             }
         });
     };
-
+     
     const handleSignUp = () =>{
         clearError();
         fire
@@ -116,6 +117,8 @@ function App() {
             ):(
               
             <LogIn 
+            name = {name}
+            setName = {setName}
             email = {email}
             setEmail = {setEmail}
             password = {password}
@@ -137,9 +140,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-    </Router>
-
-    
+      </Router>
   );
 }
 
