@@ -1,35 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './Destination.css';
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import * as parkDate from "../../data/skateboard-parks.json";
-import svg from '../../image/cng.jpg'
+
 
 const Destination = () => {
 
-    const [viewport, setViewport] = useState({
-        latitude: 45.4211,
-        longitude: -75.6903,
-        width: "100vw",
-        height: "100vh",
-        zoom: 10
-      });
-      const [selectedPark, setSelectedPark] = useState(null);
-    
-      useEffect(() => {
-        const listener = e => {
-          if (e.key === "Escape") {
-            setSelectedPark(null);
-          }
-        };
-        window.addEventListener("keydown", listener);
-    
-        return () => {
-          window.removeEventListener("keydown", listener);
-        };
-      }, []);
     return (
-        <div className= "d-flex">
-            <section className="search-field">
+        <div className= "container d-lg-flex">
+            <div className="search-field col-lg-6">
                 <div className="searchContainer">
                     <label>From</label>
                     <input type="text" required/>
@@ -39,50 +16,9 @@ const Destination = () => {
                         <button>Search</button>
                     </div>
                 </div>
-            </section>
-            <div className="ms-5">
-            <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-        onViewportChange={viewport => {
-          setViewport(viewport);
-        }}
-      >
-        {parkDate.features.map(park => (
-          <Marker
-            key={park.properties.PARK_ID}
-            latitude={park.geometry.coordinates[1]}
-            longitude={park.geometry.coordinates[0]}
-          >
-              <div>
-              <button
-              className="marker-btn"
-              onClick={e => {
-                e.preventDefault();
-                setSelectedPark(park);
-              }}
-            >
-              <img src={svg} alt="Skate Park Icon" />
-            </button>
-              </div>
-          </Marker>
-        ))}
-
-        {selectedPark ? (
-          <Popup
-            latitude={selectedPark.geometry.coordinates[1]}
-            longitude={selectedPark.geometry.coordinates[0]}
-            onClose={() => {
-              setSelectedPark(null);
-            }}
-          >
-            <div>
-              <h2>{selectedPark.properties.NAME}</h2>
-              <p>{selectedPark.properties.DESCRIPTIO}</p>
             </div>
-          </Popup>
-        ) : null}
-      </ReactMapGL>
+            <div className="ms-5 col-lg-6 mt-5">
+              <h1>Good Morning</h1>
             </div>
         </div>
     );
