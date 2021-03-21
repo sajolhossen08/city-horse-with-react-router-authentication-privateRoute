@@ -24,7 +24,7 @@ const Header = (props) => {
                         </li>
                         <li className="nav-item">
                             {user ? (
-                                <Link className="nav-link" to="/login" onClick ={handleSignOut}>{user.email}</Link>
+                                <Link className="nav-link" to="/login" onClick ={handleSignOut}>Log Out</Link>
                             ):(
                                 <Link className="nav-link" to="/login">Log In</Link>
                             )}
