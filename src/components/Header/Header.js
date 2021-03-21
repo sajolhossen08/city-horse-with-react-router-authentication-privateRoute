@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './Header.css'
 
 const Header = (props) => {
-    const {name, user, handleSignOut} = props;
+    const {user, handleSignOut} = props;
     
     return (
         <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark ">
@@ -28,6 +28,9 @@ const Header = (props) => {
                             ):(
                                 <Link className="nav-link" to="/login">Log In</Link>
                             )}
+                        </li>
+                        <li className="nav-item">
+                        <Link className="nav-link" to="#">{user.email}</Link>
                         </li>
                     </ul>
                 </div>

@@ -24,6 +24,7 @@ function App() {
     const [passwordError, setPasswordError] = useState('');
     const [haveAccount, setHaveAccount] = useState(false);
 
+
     const handleLogInByGoogle=()=>{
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth()
